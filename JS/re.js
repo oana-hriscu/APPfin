@@ -67,7 +67,7 @@ $(function() {
       for(let i=0; i < yearList.length; i++) {
         let paragraph = $('<p/>').text(yearList[i]);
         let line = $('<hr/>').addClass('vertical-line');
-        let div = $('<div id="axis_element" style="padding-left: 0.5%; padding-right: 0.5%"></div>');
+        let div = $('<div id="axis_element" style="padding-left: 5px; padding-right: 5px"></div>'); //0.5%
         paragraph.appendTo(div);
         line.appendTo(div);
         
@@ -101,11 +101,11 @@ $(function() {
       .appendTo(container);
       let arrow = $('<div/>').addClass('arrow').appendTo(person);
       let drop = $('<div/>').addClass('drop').appendTo(arrow);
-      $('<div/>').addClass('pic').appendTo(drop);
-      $('<div/>').addClass('line one').appendTo(drop);
-      $('<div/>').addClass('line two').appendTo(drop);
-      $('<div/>').addClass('line three').appendTo(drop);
-      $('<div/>').addClass('line four').appendTo(drop);
+      $('<div/>').addClass('pic').prepend($('<img>',{class:'theImage',src: listOfPeople[i]['Nume'].split(' ')[1]+'.jpg'})).appendTo(drop);
+      $('<div/>').addClass('line one').text(listOfPeople[i]['Nume']).appendTo(drop);
+      $('<div/>').addClass('line two').text('filozof').appendTo(drop);
+      //$('<div/>').addClass('line three').appendTo(drop);
+      //$('<div/>').addClass('line four').appendTo(drop);
       
       
       let bar = $('<hr></hr>').addClass('bars');
